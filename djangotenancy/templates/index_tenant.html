@@ -1,0 +1,10 @@
+{% extends "header.html" %}
+
+{% block content %}
+<b>Ini adalah Halaman Tenant</b>
+{% endblock %}
+
+{% block summary %}
+  <h4>{{ request.tenant.name }}</h4>
+  <h4>{{ request.tenant.paid_until }}</h4>
+{% endblock %}

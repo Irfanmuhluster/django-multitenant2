@@ -1,0 +1,14 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+<h4><b>Halaman Utama Public</b></h4>
+<h3>Daftar TENANT : </h3>
+<ul>
+{% for tenant in tenants_list %}
+	<li> 
+      <a href="http://{{ tenant.domain_url }}:8000">{{ tenant.name }}</a> &middot;
+{% endfor %}</li>
+</ul>
+
+{% endblock %}
