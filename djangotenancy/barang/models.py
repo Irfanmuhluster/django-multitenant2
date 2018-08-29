@@ -10,7 +10,7 @@ from django.db import models
 class Barang (models.Model):
     id = models.AutoField(primary_key=True)
     # createdby = models.ForeignKey(
-    #    User, null=True, on_delete=models.CASCADE, default=User, editable=False)
+    # User, null=True, on_delete=models.CASCADE, default=User, editable=False)
     nama_barang = models.CharField(max_length=100)
     stok = models.IntegerField(default=0)
     waktu = models.DateField(auto_now_add=True)
