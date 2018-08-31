@@ -1,4 +1,4 @@
-# djangomul titenancy
+# django multitenancy
 ### Django multitenancy/ django multi tenant dengan DJANGO REST FRAMEWORK
 * Requirement Pipfile:
 ```
