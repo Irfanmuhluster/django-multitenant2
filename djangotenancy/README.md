@@ -1,6 +1,6 @@
 # djangomultitenancy
 * Django multitenancy 
-### Requirement :
+* Requirement :
 ```
 [[source]]
 
@@ -23,6 +23,8 @@ django-tenants = "*"
 "python3-openid" = "*"
 ```
 
+* Langkah-langkah:
+
 ```
 mkdir djangotenancy2
 cd djangotenancy2
@@ -36,18 +38,21 @@ python manage.py startapp customers
 ``
 ctrl+shift+t
 ``
+
+* menggunakan database posgress:
 ```
 sudo -u postgres createdb irfan2
 sudo -u postgres createdb latihan2
 sudo -u postgres psql
 grant all privileges on database belajar4 to irfan;
 ```
+* migration:
 ```
 python manage.py makemigrations customers
 python manage.py migrate_schemas --shared
 python manage.py shell 
 ```
-
+* insert tenant:
 ```
 from customers.models import Client, Domain
 
