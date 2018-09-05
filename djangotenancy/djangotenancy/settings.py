@@ -36,6 +36,7 @@ SHARED_APPS = (
     'django_tenants',  # mandatory
     'customers',  # you must list the app where your tenant model resides in
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.contenttypes',
 
     # everything below here is optional

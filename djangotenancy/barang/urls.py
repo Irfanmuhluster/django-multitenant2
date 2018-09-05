@@ -1,7 +1,9 @@
 from django.conf.urls import url, include
+from django.urls import path
 from django.contrib import admin
 from rest_framework import routers
 from barang.views import *
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 urlpatterns = [
@@ -12,4 +14,5 @@ urlpatterns = [
     url(r'^barang/(?P<pk>[0-9]+)', BarangDetail.as_view()),
     url(r'^barang', BarangList.as_view(), name='barang'),
     url(r'^barang/delete', DeleteBarang.as_view()),
+    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth')
 ]
