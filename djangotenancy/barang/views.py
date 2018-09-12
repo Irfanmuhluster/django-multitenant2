@@ -1,6 +1,7 @@
 from .models import Barang
 # from django.shortcuts import get_object_or_404
 # from rest_framework import generics, permissions
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.http import Http404
 from rest_framework.views import APIView
@@ -66,7 +67,8 @@ class BarangList(APIView):
         serializer = BarangSerializer(Barangs, many=True)
         return Response(serializer.data)
 
-    def post(self, request, obj, form, change, format=None):
+    @csrf_exempt
+    def post(self, request):
         # ini merequest data dari serialized
         serializer = BarangSerializer(data=request.data)
         if serializer.is_valid():
